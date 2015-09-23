@@ -1,0 +1,9 @@
+#todo-list li.completed lable{
+	color:#a9a9a9;
+	text-decoration: line-through;
+}
+
+#todo-list li.editing .view{
+	display: none;
+	padding: 0;
+}

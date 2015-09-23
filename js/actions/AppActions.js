@@ -12,6 +12,40 @@ var TodoActions = {
 			actionType:TodoConstants.TODO_CREATE,
 			value:text
 		});
+	},
+	toggleComplete: function(todo){
+		var id = todo.id;
+		var actionType = todo.complete ?
+		TodoConstants.TODO_UNCOMPLATE :
+		TodoConstants.TODO_COMPLATE
+
+		AppDispatcher.dispatch({
+			actionType:actionType,
+			id:id
+		});
+	},
+	toggleCompleteAll:function(){
+		AppDispatcher.dispatch({
+			actionType:TodoConstants.TODO_TOGGLE_COMPLETE_ALL
+		});
+	},
+	updateText: function(id,text){
+		AppDispatcher.dispatch({
+			actionType:TodoConstants.TODO_UPDATE_TEXT,
+			id:id,
+			text:text
+		});
+	},
+	destroy: function(id){
+		AppDispatcher.dispatch({
+			actionType:TodoConstants.TODO_DESTROY,
+			id:id
+		});
+	},
+	destroyCompleted: function(){
+		AppDispatcher.dispatch({
+			actionType:TodoConstants.TODO_DESTROY_COMPLETED
+		});
 	}
 }
 

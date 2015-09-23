@@ -27,15 +27,14 @@ var TodoApp = React.createClass({
 			<div>
 				<Header/>
 				<Main 
-					allTodos={this.state.allTodos}/>
-				<Footer/>
+					allTodos={this.state.allTodos}
+					areAllComplete={false}/>
+				<Footer allTodos={this.state.allTodos}/>
 			</div>
 		)
 	},
 	_onChange: function(){
-		console.log('_onChange in TodoApp.react');
 		this.setState(getTodoState());
-		console.log(this.state);
 	}
 });
 

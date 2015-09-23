@@ -17,7 +17,9 @@ var Header = React.createClass({
 		)
 	},
 	save: function(text){
-		AppActions.create(text);
+		if(text.trim()){
+			AppActions.create(text);
+		}
 	}
 });
 
